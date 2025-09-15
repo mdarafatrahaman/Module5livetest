@@ -1,59 +1,36 @@
-main(){
+// Main function
+  main() {
+  // Create book objects
+  Book book1 = Book('Mockingbird', 'Harper', 25.0);
 
-  book Book = book('English Book', 'Tomas', 150);
+  // Display book details with discounted prices
+  book1.displayDetails(10); // 10% discount
 
 }
-class book{
-    String ? title;
-    String ? author;
-    int ? price;
 
-    //constractor
-  book(this.title, this.author, this.price){
-    print('title of book');
-    print('Author of book');
-    print('price of book');
+// Define the Book class
+class Book {
+  // Properties
+  String title;
+  String author;
+  double price;
+
+  // Constructor
+  Book(this.title, this.author, this.price);
+
+  // Method to calculate discounted price
+  double discountedPrice(double discountPercent) {
+    return price - (price * discountPercent / 100);
   }
 
-    discountedPrice(){
-    print('calculate the price');
-    }
-}
-
-class Employee {
-
-  String name ='Arif';
-  int salary = 10000;
-
-  Employee(this.name, this.salary);
-}
-
-//subclass 1: Manager
-
-  class Manager extends Employee{
-  String ? department;
-
-  Manager(super.name){
-    print('object');
+  // Method to display book details
+  void displayDetails(double discountPercent) {
+    print('Title: $title');
+    print('Author: $author');
+    print('Original Price: \$${price.toStringAsFixed(2)}');
+    print('Discounted Price (${discountPercent.toStringAsFixed(0)}% off): '
+        '\$${discountedPrice(discountPercent).toStringAsFixed(2)}');
+    print(''); // For spacing
   }
 }
-//commit
-//subclass 2: Manager
-
-class Developer extends Employee {
-  String ? programmingLanguage;
-}
-
-abstract class Appliance {
-
-  truOn() {
-    print('Fan is now running');
-}
-  turnOff(){
-    print('Fan is Stop');
-  }
-}
-
-class Fan extends Appliance{
-
 }
