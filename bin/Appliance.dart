@@ -1,3 +1,17 @@
+main() {
+  // Create Fan object and call methods
+  Fan myFan = Fan();
+  myFan.turnOn();
+  myFan.turnOff();
+
+  print('');
+
+  // Create Light object and call methods
+  Light myLight = Light();
+  myLight.turnOn();
+  myLight.turnOff();
+}
+
 // Abstract class: Appliance
 abstract class Appliance {
   void turnOn();  // Abstract method
@@ -31,17 +45,3 @@ class Light extends Appliance {
 }
 
 //commit
-
-void main() {
-  // Create Fan object and call methods
-  Fan myFan = Fan();
-  myFan.turnOn();
-  myFan.turnOff();
-
-  print('');
-
-  // Create Light object and call methods
-  Light myLight = Light();
-  myLight.turnOn();
-  myLight.turnOff();
-}
